@@ -1,0 +1,49 @@
+[package]
+name = "rust-toolchain-file"
+authors = ["Martijn Gribnau <garm@ilumeo.com>"]
+description = "Parsing for rust-toolchain(.toml) files"
+license = "MIT OR Apache-2.0"
+version = "0.1.0"
+repository = "https://github.com/foresterre/rust-toolchain-file"
+keywords = ["rust-toolchain", "rust-toolchain-toml", "toolchain-file", "pinned-release", "rustup-toolchain"]
+categories = ["development-tools"]
+
+rust-version = "1.56"
+edition = "2021"
+
+exclude = ["run_coverage.sh"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# UTF-8 paths
+camino = { version = "1", features = ["serde1"] }
+
+# errors
+thiserror = "1"
+
+# TODO choices
+toml_edit = { version = "0.14.2", features = ["serde"] }
+
+# TOML choice 1: Format preserving TOML serialization and deserialization library (https://crates.io/crates/toml_edit)
+#toml_edit = { version = "0.14.2", optional = true }
+
+# TOML choice 2: toml (https://crates.io/crates/toml)
+# toml_rs = { version = "0.5.8", optional = true, package = "toml" }
+
+# serialization and deserialization
+serde = { version = "1" }
+
+[features]
+# Requires explicit choice of a TOML library and optionally serde
+default = []
+
+# Choices of TOML serialization and deserialization libraries (TODO)
+#
+# Can't have a 'serde'-only feature and use "toml_edit?/serde" and "toml?/serde" (Cargo 1.60+) because 'toml' does
+#   not have a serde feature
+#use_toml = ["serde", "toml_rs", "camino/serde1"]
+#use_toml_edit = ["serde", "toml_edit", "toml_edit/serde", "camino/serde1"]
+
+[dev-dependencies]
+yare = "1.0.1"
