@@ -23,7 +23,7 @@ camino = { version = "1", features = ["serde1"] }
 thiserror = "1"
 
 # TODO choices
-toml_edit = { version = "0.14.2", features = ["serde"] }
+toml_edit = { version = "0.20.0", features = ["serde"] }
 
 # TOML choice 1: Format preserving TOML serialization and deserialization library (https://crates.io/crates/toml_edit)
 #toml_edit = { version = "0.14.2", optional = true }
