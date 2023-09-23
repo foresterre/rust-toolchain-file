@@ -8,7 +8,7 @@ repository = "https://github.com/foresterre/rust-toolchain-file"
 keywords = ["rust-toolchain", "rust-toolchain-toml", "toolchain-file", "pinned-release", "rustup-toolchain"]
 categories = ["development-tools"]
 
-rust-version = "1.56"
+rust-version = "1.66"
 edition = "2021"
 
 exclude = ["run_coverage.sh"]
