@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        build: [ubuntu-stable, macos-stable, win-gnu-stable, win-msvc-stable, ubuntu-beta, ubuntu-nightly]
+        build: [ubuntu-stable, macos-stable, win-gnu-stable, win-msvc-stable]
         include:
           - build: ubuntu-stable
             os: ubuntu-latest
@@ -34,13 +34,6 @@ jobs:
             os: windows-latest
             rust: stable
 
-          - build: ubuntu-beta
-            os: ubuntu-latest
-            rust: beta
-
-          - build: ubuntu-nightly
-            os: ubuntu-latest
-            rust: nightly
     steps:
       - name: checkout_repository
         uses: actions/checkout@v4
