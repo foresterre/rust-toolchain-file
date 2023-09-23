@@ -1,0 +1,16 @@
+[advisories]
+vulnerability = "deny"
+unmaintained = "warn"
+yanked = "warn"
+notice = "warn"
+ignore = []
+
+[licenses]
+unlicensed = "deny"
+copyleft = "deny"
+confidence-threshold = 0.925
+allow = [
+    "MIT",
+    "Apache-2.0",
+]
+
