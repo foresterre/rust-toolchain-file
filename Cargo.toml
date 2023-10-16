@@ -46,4 +46,4 @@ default = []
 #use_toml_edit = ["serde", "toml_edit", "toml_edit/serde", "camino/serde1"]
 
 [dev-dependencies]
-yare = "1.0.1"
+yare = "2.0.0"
